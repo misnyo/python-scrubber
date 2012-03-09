@@ -131,7 +131,8 @@ class Scrubber(object):
                 text = node
                 text2 = urlize(text, nofollow=self.nofollow)
                 if text != text2:
-                    node.replaceWith(text2)
+                    a=BeautifulSoup(text2)
+                    node.replaceWith(a.a)
             else:
                 if node.name == "a":
                     return
